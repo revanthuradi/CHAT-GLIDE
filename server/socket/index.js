@@ -14,7 +14,7 @@ export const server = http.createServer(app);
 const io = new Server(server, {
   path : '/socket/',
   cors: {
-    origin: "https://chat-glide-frontend.vercel.app",
+    origin: ["https://chat-glide-frontend.vercel.app"],
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   },
