@@ -14,7 +14,7 @@ connectDB().then(() =>{
   app.use(
     cors({
       origin: [
-        "",
+        "https://chat-glide-frontend.vercel.app",
       ],
       credentials: true,
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
@@ -26,7 +26,7 @@ connectDB().then(() =>{
   app.get("/", (req,res)=>{
     res.send("hello")
   });
-  
+
   app.use("api/auth", authRouter);
   app.use("app/api", tokenVerify, userRouter);
 
