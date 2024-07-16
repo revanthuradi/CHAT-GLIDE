@@ -34,7 +34,7 @@ const Signup = () => {
         try {
           setIsLoading(true)
 
-          const res = await axios.post(`https://chat-glide-git-main-revanth-uradis-projects.vercel.app/app/auth/signup`, {
+          const res = await axios.post(`https://chat-glide-api.vercel.app/app/auth/signup`, {
             ...values,
             profilePic: profilePic
           })

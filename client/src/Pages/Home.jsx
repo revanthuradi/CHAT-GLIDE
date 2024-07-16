@@ -15,7 +15,7 @@ const Home = () => {
   const location = useLocation()
   const basePath = location.pathname === "/"
   useEffect(() => {
-    const socketConnection = io(`https://chat-glide-git-main-revanth-uradis-projects.vercel.app/app`, {
+    const socketConnection = io(`https://chat-glide-api.vercel.app/`, {
       auth: {
         token: localStorage.getItem("token")
       }

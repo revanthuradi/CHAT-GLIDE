@@ -24,7 +24,7 @@ const Login = () => {
     const user = { userName: e.target[0].value, password: e.target[1].value };
     try {
       setIsLoading(true)
-      const res = await axios.post(`https://chat-glide-git-main-revanth-uradis-projects.vercel.app/app/auth/login`, user)
+      const res = await axios.post(`https://chat-glide-api.vercel.app/app/auth/login`, user)
       console.log(res)
       toast.success(res.data.message)
       navigate('/')

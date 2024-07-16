@@ -18,7 +18,7 @@ const SearchUser = ({ closeSearch }) => {
 
       if (search !== "") {
         const token = localStorage.getItem('token')
-        const url = `https://chat-glide-git-main-revanth-uradis-projects.vercel.app/app/api/find-user?search=${search}&id=${id}`
+        const url = `https://chat-glide-api.vercel.app/app/api/find-user?search=${search}&id=${id}`
         const res = await axios.get(url, {
           headers: {
             'Authorization': `Bearer ${token}`
