@@ -12,9 +12,10 @@ dotenv.config();
 export const app = express();
 export const server = http.createServer(app);
 const io = new Server(server, {
+  path : '/socket/',
   cors: {
-    origin: "*",
-    // credentials: true,
+    origin: "https://chat-glide-frontend.vercel.app",
+    credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   },
 });

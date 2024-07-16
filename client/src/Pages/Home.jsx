@@ -17,7 +17,7 @@ const Home = () => {
   useEffect(() => {
     try {
 
-      const socketConnection = io(`https://chat-glide-api.vercel.app`, {
+      const socketConnection = io(`https://chat-glide-api.vercel.app/socket`, {
         auth: {
           token: localStorage.getItem("token")
         }
@@ -25,7 +25,7 @@ const Home = () => {
       console.log("connection", socketConnection)
       if (socketConnection.connected) {
         console.log("connection established")
-      }else{
+      } else {
         console.log("connection failed")
 
       }
