@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Outlet } from "react-router-dom";
-import Loader from "../components/Loader"
 import { useSelector, useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import Sidebar from "../components/Sidebar";

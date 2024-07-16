@@ -1,4 +1,4 @@
-import { app, server } from "./socket/index.js";
+import { app, server } from "./socket/socket.js";
 import express from "express";
 import connectDB from "./DB/main.js";
 import authRouter from "./Routes/auth.js";
