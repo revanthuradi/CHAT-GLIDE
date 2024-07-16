@@ -27,7 +27,7 @@ connectDB().then(() =>{
     res.send("hello")
   });
 
-  app.use("api/auth", authRouter);
+  app.use("/auth", authRouter);
   app.use("app/api", tokenVerify, userRouter);
 
   server.listen(port, () => {
