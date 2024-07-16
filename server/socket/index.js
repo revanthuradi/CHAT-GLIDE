@@ -13,7 +13,6 @@ export const app = express();
 export const server = http.createServer(app);
 console.log("estalishing socket connection....");
 const io = new Server(server, {
-  path: "/socket/",
   cors: {
     origin: "*",
     credentials: true,
