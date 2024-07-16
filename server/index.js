@@ -22,7 +22,8 @@ connectDB().then(() =>{
   );
 
   app.use(express.json());
-  app.use("/", (req,res)=>{
+
+  app.get("/", (req,res)=>{
     res.send("hello")
   });
   app.use("api/auth", authRouter);
