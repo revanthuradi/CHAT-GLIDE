@@ -11,8 +11,9 @@ dotenv.config();
 
 export const app = express();
 export const server = http.createServer(app);
+console.log("estalishing socket connection....");
 const io = new Server(server, {
-  path : '/socket/',
+  path: "/socket/",
   cors: {
     origin: ["https://chat-glide-frontend.vercel.app"],
     credentials: true,
