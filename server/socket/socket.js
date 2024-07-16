@@ -11,7 +11,6 @@ dotenv.config();
 
 export const app = express();
 export const server = http.createServer(app);
-console.log("estalishing socket connection....");
 const io = new Server(server, {
   cors: {
     origin: "*",
@@ -19,6 +18,7 @@ const io = new Server(server, {
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   },
 });
+console.log("estalishing socket connection....");
 
 //online user
 const onlineUser = new Set();
