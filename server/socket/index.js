@@ -15,7 +15,7 @@ console.log("estalishing socket connection....");
 const io = new Server(server, {
   path: "/socket/",
   cors: {
-    origin: ["https://chat-glide-frontend.vercel.app"],
+    origin: "*",
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   },
