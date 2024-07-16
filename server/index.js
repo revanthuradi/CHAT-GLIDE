@@ -14,7 +14,7 @@ connectDB().then(() => {
   app.use(
     cors({
       origin: "*",
-      credentials: true,
+      // credentials: true,
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     })
   );

@@ -17,14 +17,17 @@ const Home = () => {
   useEffect(() => {
     try {
 
-      const socketConnection = io(`https://chat-glide-api.vercel.app/`, {
+      const socketConnection = io(`https://chat-glide-api.vercel.app`, {
         auth: {
           token: localStorage.getItem("token")
         }
       })
-
-      if (socketConnection) {
+      console.log("connection", socketConnection)
+      if (socketConnection.connected) {
         console.log("connection established")
+      }else{
+        console.log("connection failed")
+
       }
       dispatch(setSocketConnection(socketConnection))
       socketConnection.on('onlineUser', (data) => {
@@ -32,7 +35,7 @@ const Home = () => {
       })
 
     } catch (error) {
-      console.log("socket errorrr",err)
+      console.log("socket errorrr", err)
     }
   }, [])
   useEffect(() => {
