@@ -15,17 +15,26 @@ const Home = () => {
   const location = useLocation()
   const basePath = location.pathname === "/"
   useEffect(() => {
-    const socketConnection = io(`https://chat-glide-api.vercel.app`, {
-      auth: {
-        token: localStorage.getItem("token")
+    try {
+
+      const socketConnection = io(`https://chat-glide-api.vercel.app`, {
+        auth: {
+          token: localStorage.getItem("token")
+        }
+      })
+
+      if (socketConnection) {
+        console.log("connection established")
       }
-    })
-    dispatch(setSocketConnection(socketConnection))
-    socketConnection.on('onlineUser', (data) => {
-      dispatch(setOnlineUser(data))
-    })
-    return () => {
-      socketConnection.disconnect()
+      dispatch(setSocketConnection(socketConnection))
+      socketConnection.on('onlineUser', (data) => {
+        dispatch(setOnlineUser(data))
+      })
+      return () => {
+        socketConnection.disconnect()
+      }
+    } catch (error) {
+      console.log(err)
     }
   }, [])
   useEffect(() => {
@@ -53,7 +62,7 @@ const Home = () => {
         <Outlet />
       </section>
       <section className={`${basePath && "hidden lg:flex"} hidden    justify-center items-center`}>
-       <StartConversation/>
+        <StartConversation />
       </section>
     </div>
   );
