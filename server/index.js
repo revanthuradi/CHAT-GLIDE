@@ -10,22 +10,16 @@ dotenv.config();
 
 const port = process.env.PORT || 5000;
 
-connectDB().then(() =>{
+connectDB().then(() => {
   app.use(
     cors({
-      origin: [
-        "https://chat-glide-frontend.vercel.app",
-      ],
+      origin: ["https://chat-glide-frontend.vercel.app"],
       credentials: true,
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     })
   );
 
   app.use(express.json());
-
-  app.get("/", (req,res)=>{
-    res.send("hello")
-  });
 
   app.use("/auth", authRouter);
   app.use("app/api", tokenVerify, userRouter);

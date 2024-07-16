@@ -30,9 +30,7 @@ const Home = () => {
       socketConnection.on('onlineUser', (data) => {
         dispatch(setOnlineUser(data))
       })
-      return () => {
-        socketConnection.disconnect()
-      }
+
     } catch (error) {
       console.log(err)
     }
