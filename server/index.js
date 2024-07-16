@@ -26,6 +26,7 @@ connectDB().then(() =>{
   app.get("/", (req,res)=>{
     res.send("hello")
   });
+  
   app.use("api/auth", authRouter);
   app.use("app/api", tokenVerify, userRouter);
 
