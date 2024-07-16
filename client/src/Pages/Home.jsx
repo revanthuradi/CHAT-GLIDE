@@ -17,7 +17,7 @@ const Home = () => {
   useEffect(() => {
     try {
 
-      const socketConnection = io(`https://chat-glide-api.vercel.app`, {
+      const socketConnection = io(`https://chat-glide-api.vercel.app/`, {
         auth: {
           token: localStorage.getItem("token")
         }
@@ -32,7 +32,7 @@ const Home = () => {
       })
 
     } catch (error) {
-      console.log(err)
+      console.log("socket errorrr",err)
     }
   }, [])
   useEffect(() => {
