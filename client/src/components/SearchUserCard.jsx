@@ -4,7 +4,7 @@ import { useSelector } from 'react-redux'
 
 const SearchUserCard = ({ userName, profilePic, _id, closeSearch }) => {
     const onlineUsers = useSelector(state => state.user.onlineUser)
-    const isOnline = onlineUsers.includes(_id)
+    const isOnline = onlineUsers?.includes(_id)
     return (
         <Link to={'/' + _id} onClick={closeSearch} className='flex w-full gap-3 py-4 items-center  px-3 dark:hover:bg-[#212121] hover:bg-[#bfbfbf80]  '>
             <div className='w-[40px] h-[40px]  relative '>
