@@ -28,7 +28,7 @@ const onlineUser = new Set();
 io.on("connection", async (socket) => {
   const transport = socket.conn.transport.name; // in most cases, "polling"
 
-  socket.conn.on("upgrade", () => {
+  io.conn.on("upgrade", () => {
     const upgradedTransport = socket.conn.transport.name; // in most cases, "websocket"
   });
   console.log("connected user", socket.id);
