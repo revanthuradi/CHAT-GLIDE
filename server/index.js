@@ -14,7 +14,7 @@ connectDB().then(() =>{
   app.use(
     cors({
       origin: [
-        "https://chat-glide-git-main-revanth-uradis-projects.vercel.app",
+        "",
       ],
       credentials: true,
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],

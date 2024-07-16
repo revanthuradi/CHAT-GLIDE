@@ -13,7 +13,7 @@ export const app = express();
 export const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ["https://chat-glide-git-main-revanth-uradis-projects.vercel.app"],
+    origin: [""],
     credentials: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   },
