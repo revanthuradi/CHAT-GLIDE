@@ -24,6 +24,7 @@ const SearchUser = ({ closeSearch }) => {
             'Authorization': `Bearer ${token}`
           }
         })
+        console.log(res)
         setUsers(res.data.users)
       } else {
         setUsers([])

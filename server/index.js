@@ -22,7 +22,7 @@ connectDB().then(() => {
   app.use(express.json());
 
   app.use("/auth", authRouter);
-  app.use("app/api", tokenVerify, userRouter);
+  app.use("/api", tokenVerify, userRouter);
 
   server.listen(port, () => {
     console.log(`server running at http://localhost:${port}`);
