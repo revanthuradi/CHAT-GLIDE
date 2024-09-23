@@ -27,14 +27,11 @@ const onlineUser = new Set();
 
 
 io.on("connection", async (socket) => {
-  const transport = socket.conn.transport.name; // in most cases, "polling"
-
-  io.conn.on("upgrade", () => {
-    const upgradedTransport = socket.conn.transport.name; // in most cases, "websocket"
-  });
+  
   console.log("connected user", socket.id);
 
   const token = socket.handshake.auth.token;
+  console.log(token)
   //current user
   const user = await getUserDetailsFromToken(token);
 

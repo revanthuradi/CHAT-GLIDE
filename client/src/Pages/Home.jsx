@@ -16,20 +16,14 @@ const Home = () => {
   useEffect(() => {
     try {
 
-      const socketConnection = io(`https://chat-glide-api.vercel.app`, {
+      const socketConnection = io(`http://localhost:4000/`, {
         auth: {
           token: localStorage.getItem("token")
         },
-        transports: ['websocket']
+        // transports: ['websocket','polling']
       })
 
-      socketConnection.on("connect", () => {
-        const transport = socket.io.engine.transport.name; // in most cases, "polling"
-      
-        socketConnection.io.engine.on("upgrade", () => {
-          const upgradedTransport = socket.io.engine.transport.name; // in most cases, "websocket"
-        });
-      });
+   
       console.log("connection", socketConnection)
       if (socketConnection.connected) {
         console.log("connection established")
