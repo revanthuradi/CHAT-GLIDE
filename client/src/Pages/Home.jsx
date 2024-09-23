@@ -17,10 +17,11 @@ const Home = () => {
     try {
 
       const socketConnection = io(`https://chat-glide-api.vercel.app/`, {
+        credentials: true,
         auth: {
           token: localStorage.getItem("token")
         },
-        transports: ['websocket','polling']
+        transports: ['websocket']
       })
 
    

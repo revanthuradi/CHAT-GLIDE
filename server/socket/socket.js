@@ -15,7 +15,7 @@ const io = new Server(server, {
   cors: {
     origin: "*",
     credentials: true,
-    transports: ['websocket', 'polling'],
+    transports: ['websocket'],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   },
 });
