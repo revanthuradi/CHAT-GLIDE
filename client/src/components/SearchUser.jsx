@@ -30,7 +30,7 @@ const SearchUser = ({ closeSearch }) => {
         setUsers([])
       }
     } catch (err) {
-
+      console.log(err)
     }
   }
   useEffect(() => {

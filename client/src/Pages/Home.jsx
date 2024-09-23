@@ -16,11 +16,11 @@ const Home = () => {
   useEffect(() => {
     try {
 
-      const socketConnection = io(`http://localhost:4000/`, {
+      const socketConnection = io(`https://chat-glide-api.vercel.app/`, {
         auth: {
           token: localStorage.getItem("token")
         },
-        // transports: ['websocket','polling']
+        transports: ['websocket','polling']
       })
 
    
