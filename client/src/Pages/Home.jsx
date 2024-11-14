@@ -21,10 +21,16 @@ const Home = () => {
         auth: {
           token: localStorage.getItem("token")
         },
-        transports: ['websocket']
+        transports: ['websocket', 'polling']
       })
+      socketConnection.on("connect", () => {
+        console.log("Connected successfully");
+      });
 
-   
+      socketConnection.on("connect_error", (error) => {
+        console.error("Connection error:", error);
+      });
+
       console.log("connection", socketConnection)
       if (socketConnection.connected) {
         console.log("connection established")

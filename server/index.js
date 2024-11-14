@@ -15,7 +15,7 @@ connectDB().then(() => {
     cors({
       origin: "*",
       credentials: true,
-      transports: ["websocket", "polling"],
+      allowedHeaders: ["Content-Type", "Authorization"],
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
     })
   );
