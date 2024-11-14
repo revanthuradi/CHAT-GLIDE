@@ -37,7 +37,7 @@ const Home = () => {
       }
 
     } catch (error) {
-      console.log("socket errorrr", err)
+      console.log("socket errorrr", error)
     }
   }, [])
   useEffect(() => {
