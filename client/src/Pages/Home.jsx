@@ -16,13 +16,14 @@ const Home = () => {
   useEffect(() => {
     try {
 
-      const socketConnection = io(`https://chat-glide-api.vercel.app`, {
+      const socketConnection = io("https://chat-glide-api.vercel.app", {
         credentials: true,
         auth: {
-          token: localStorage.getItem("token")
+          token: localStorage.getItem("token"),
         },
-        transports: ['websocket', 'polling']
-      })
+        transports: ["websocket", "polling"],
+        timeout: 10000, // Increase timeout to 10 seconds
+      });
       socketConnection.on("connect", () => {
         console.log("Connected successfully");
       });
