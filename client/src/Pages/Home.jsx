@@ -16,7 +16,7 @@ const Home = () => {
   useEffect(() => {
     try {
 
-      const socketConnection = io(`https://chat-glide-api.vercel.app/`, {
+      const socketConnection = io(`https://chat-glide-api.vercel.app`, {
         credentials: true,
         auth: {
           token: localStorage.getItem("token")
