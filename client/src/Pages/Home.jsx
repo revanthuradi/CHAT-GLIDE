@@ -21,7 +21,7 @@ const Home = () => {
         auth: {
           token: localStorage.getItem("token"),
         },
-        transports: ["websocket", "polling"],
+        transports: ["websocket"],
         timeout: 10000, // Increase timeout to 10 seconds
       });
       socketConnection.on("connect", () => {
