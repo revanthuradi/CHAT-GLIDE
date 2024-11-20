@@ -13,7 +13,7 @@ const port = process.env.PORT || 5000;
 connectDB().then(() => {
   app.use(
     cors({
-      origin: "*",
+      origin: ["https://chat-glide-frontend.vercel.app"],
       credentials: true,
       allowedHeaders: ["Content-Type", "Authorization"],
       methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],

@@ -13,7 +13,7 @@ export const app = express();
 export const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: "*",
+    origin: "https://chat-glide-frontend.vercel.app",
     credentials: true,
     transports: ['websocket', 'polling'],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
