@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Outlet } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
@@ -27,7 +27,7 @@ const Home = () => {
         transports: ["websocket"],
         timeout: 10000, // 10 seconds timeout
       });
-      
+
       socketConnection.on("connect", () => {
         console.log("Connected successfully");
       });

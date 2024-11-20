@@ -13,9 +13,9 @@ export const app = express();
 export const server = http.createServer(app);
 const io = new Server(server, {
   cors: {
-    origin: ["https://chat-glide-frontend.vercel.app"],
+    origin: "https://chat-glide-frontend.vercel.app",
     credentials: true,
-    transports: ['websocket', 'polling'],
+    transports: ["websocket", "polling"],
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
   },
 });
@@ -24,14 +24,11 @@ console.log("estalishing socket connection....");
 //online user
 const onlineUser = new Set();
 
-
-
 io.on("connection", async (socket) => {
-  
   console.log("connected user", socket.id);
 
   const token = socket.handshake.auth.token;
-  console.log(token)
+  console.log(token);
   //current user
   const user = await getUserDetailsFromToken(token);
 
