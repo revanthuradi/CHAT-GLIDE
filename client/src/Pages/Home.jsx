@@ -17,13 +17,17 @@ const Home = () => {
     try {
 
       const socketConnection = io("wss://chat-glide-api.vercel.app", {
+        reconnection: true,
+        reconnectionAttempts: 5,
+        reconnectionDelay: 2000,
         credentials: true,
         auth: {
           token: localStorage.getItem("token"),
         },
         transports: ["websocket"],
-        timeout: 10000, // Increase timeout to 10 seconds
+        timeout: 10000, // 10 seconds timeout
       });
+      
       socketConnection.on("connect", () => {
         console.log("Connected successfully");
       });
